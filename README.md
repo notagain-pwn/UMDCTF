@@ -2,8 +2,6 @@
 
 Welcome to my repository dedicated to writeups for **UMDCTF**, the University of Maryland's Capture The Flag competition!
 
----
-
 ## 🎉 About UMDCTF
 
 **UMDCTF** is an annual cybersecurity competition organized by the University of Maryland's cybersecurity club, **UMDCSEC**.  
@@ -28,8 +26,6 @@ The competition is open to everyone and is entirely **online**, typically runnin
 
 Official website: [https://umdctf.io/](https://umdctf.io/)  
 Join their community: [Discord](https://discord.gg/n65kg6KuYH)
-
----
 
 ## 📂 Available Writeups
 
