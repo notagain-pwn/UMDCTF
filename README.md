@@ -3,9 +3,9 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Event](https://img.shields.io/badge/CTF-UMDCTF-informational)
 
-## About UMDCTF
-
 UMDCTF is an annual Capture The Flag competition hosted by the cybersecurity club at the University of Maryland, College Park (UMDCSEC).
+
+## About UMDCTF
 
 - Format: Jeopardy-style
 - Categories: pwn, rev, web, crypto, osint, misc
