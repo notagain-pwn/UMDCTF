@@ -1,20 +1,25 @@
-# UMDCTF Writeups 📚🎯
+# 🎯 UMDCTF - General Overview
 
-Welcome to my repository dedicated to writeups for **UMDCTF**, the University of Maryland's Capture The Flag competition!
+![License](https://img.shields.io/badge/license-MIT-green)
+![Event](https://img.shields.io/badge/CTF-UMDCTF-informational)
 
-## 🎉 About UMDCTF
+## 📚 Table of Contents
+- [About UMDCTF](#about-umdctf)
+- [Useful Links](#useful-links)
+- [Divisions](#divisions)
+- [Sponsors](#sponsors)
 
-**UMDCTF** is an annual cybersecurity competition organized by the University of Maryland's cybersecurity club, **UMDCSEC**.  
-The event offers a classic Jeopardy-style CTF format with a wide range of challenges, including:
+## About UMDCTF
 
-- 🛡️ Pwn (binary exploitation)
-- 🧩 Reverse engineering
-- 🌐 Web exploitation
-- 🔐 Cryptography
-- 🌍 OSINT
-- 🎲 Miscellaneous challenges
+UMDCTF is an annual Capture The Flag competition hosted by the cybersecurity club at the University of Maryland, College Park (UMDCSEC).
+
+- Format: Jeopardy-style
+- Categories: pwn, rev, web, crypto, osint, misc
+- Open to academic and open divisions
+- 48-hour competition
 
 Since its first editions, UMDCTF has been known for its well-crafted, creative challenges and has grown into a popular event for both students and open divisions worldwide.  
+
 The competition is open to everyone and is entirely **online**, typically running over **48 hours**.
 
 ### 🔥 Key Points
@@ -24,13 +29,8 @@ The competition is open to everyone and is entirely **online**, typically runnin
 - Access: **Online**
 - Divisions: **Academic** & **Open**
 
-Official website: [https://umdctf.io/](https://umdctf.io/)  
-Join their community: [Discord](https://discord.gg/n65kg6KuYH)
+## Useful Links
 
-## 📂 Available Writeups
-
-- [UMDCTF 2025 Writeups](./UMDCTF_2025/)
-
-More will come for future editions!
-
-🔙 [Back to my GitHub profile](../../)
+- 🌐 [Official Website](https://umdctf.io/)
+- 💬 [Discord Server](https://discord.gg/n65kg6KuYH)
+- 🎯 [CTFtime profile](https://ctftime.org/team/87711)
