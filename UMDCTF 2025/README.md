@@ -16,7 +16,7 @@ Event Info:
 ## Writeups List
 
 - 🔥 [Aura - FILE Structure Forgery Exploit](./Aura)
-- 🎰 [Gambling - Heap Overflow Exploit](./Gambling)
+- 🎰 [Gambling - Stack Overflow, float overflow Exploit](./Gambling)
 - 🧩 [Unfinished - Mismanaged new[] Allocation Exploit](./Unfinished)
 
 The UMDCTF 2025 pwns were super interesting and creative. I loved every second of it!
