@@ -4,6 +4,7 @@ tags: [CTF, binary exploitation, float overflow, pwn]
 ---
 
 # UMDCTF 2025 - Gambling Pwn Challenge Writeup 🎲
+**Author:** [@notagain_pwn](https://github.com/notagain-pwn) (RaptX team)
 
 ![CTF](https://img.shields.io/badge/CTF-UMDCTF_2025-blue)
 ![Challenge](https://img.shields.io/badge/Challenge-Gambling-informational)
